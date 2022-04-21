@@ -19,9 +19,34 @@ namespace ConsoleApplication
         /// </summary>
         public static void Main()
         {
-            var train = new Train();
-            train.StartEngines();
-            Console.WriteLine("Hello World!");
+            //8
+            var t1 = new Train("Last Train To London");
+            Console.WriteLine(Train.Count);
+            var t2 = new Train("Last Train To London");
+            Console.WriteLine(Train.Count);
+            var t3 = new Train("Runaway Train");
+            Console.WriteLine(Train.Count);
+
+            //crea las 100 instancias exitosamente
+            for (int i = 0; i<100; i++)
+            {
+                //hola esto es una instancia
+                 var t = new Train("Last Train To London");
+                
+            }
+            
+            //Se sobrecarga y tira el valor antes de romperse por completo
+            for (int i = 0; i<10000000; i++)
+            {
+                //hola esto es una instancia
+                 var t = new Train("Last Train To London");
+                
+            }
+
+            //9 //ambos dan false porque se encuentran en distintos espacios de memoria          
+            Console.WriteLine(t1==t2);
+            Console.WriteLine(t2==t3);
+            Console.WriteLine(Train.Count);
         }
     }
 }
